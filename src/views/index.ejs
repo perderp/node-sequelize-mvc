@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/sendData" method="post">
+        <input type="text" name="first" >
+        <input type="text" name="last" >
+        <input type="number" name="age" id="">
+
+        <input type="submit" value="Submit">
+
+    </form>
+
+    <h2>View Data</h2>
+    <%data.forEach((user) => { %>
+        <p>First Name : <%=user.firstName %>  &nbsp; Last Name : <%=user.lastName %>  &nbsp; Age : <%=user.age %></p>
+        <a href="/update/<%=user.id %>"> Update </a>
+        <a href="/delete/<%=user.id %>"> Delete </a>
+    <%}) %>
+
+</body>
+</html>
